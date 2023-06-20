@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35), /* The third layer shadow */ 15px 15px 0 0px #fff, /* The fourth layer */ 15px 15px 1px 1px rgba(0, 0, 0, 0.35), /* The fourth layer shadow */ 20px 20px 0 0px #fff, /* The fifth layer */ 20px 20px 1px 1px rgba(0, 0, 0, 0.35), /* The fifth layer shadow */ 25px 25px 0 0px #fff, /* The fifth layer */ 25px 25px 1px 1px rgba(0, 0, 0, 0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    }
+
+
+</style>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta property="og:title"
+          content="Multiverse Transformer: 1st Place Solution for Waymo Open Sim Agents
+          Challenge 2023"/>
+    <meta property="og:description" content="Multiverse Transformer: 1st Place Solution for Waymo Open Sim Agents
+    Challenge 2023"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MultiVerse Transformer</title>
+
+    <script>
+        function CopyToClipboard(id) {
+            var r = document.createRange();
+            r.selectNode(document.getElementById(id));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(r);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P8DXFXFKM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-1P8DXFXFKM');
+    </script>
+    <link rel="stylesheet" href="https://gradio.s3-us-west-2.amazonaws.com/2.6.2/static/bundle.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2VYDTHPJZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C2VYDTHPJZ');
+</script>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    </div>
+</nav>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Multiverse Transformer: 1<sup>st</sup> Place Solution for Waymo Open Sim Agents
+                        Challenge 2023</h1>
+                    <div class="is-size-5 publication-authors">
+                <div class="column has-text-centered">
+                    <h1 class="title is-3 publication-title"><a href="https://cvpr2023.wad.vision/">CVPR 2023 Workshop on Autonomous Driving
+                    </a>
+
+
+                    </h1>
+                    <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="index.html" target="_self"
+                   rel="noopener noreferrer">Yu Wang</a>,</span>
+                   <span class="author-block"><a href="index.html" target="_self"
+                   rel="noopener noreferrer">Tiebiao Zhao</a>,</span>
+                   <span class="author-block"></span><a href="index.html" target="_self"
+                   rel="noopener noreferrer">Fan Yi</a>
+                </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">Pegasus</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+
+                            <!-- arXiv Link. -->
+                            <span class="link-block">
+                  <a href="./sources/MultiVerseTransformer-SimAgents.pdf" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa fa-file-pdf"></i>
+                    </span>
+                    <span>paper</span>
+                  </a>
+                </span>
+
+                            <!-- arXiv Link. -->
+                            <span class="link-block">
+                  <a href="index.html" target="_self" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+
+
+                            <!-- Video Link. -->
+                            <span class="link-block">
+                  <a href="index.html" target="_self" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        This technical report presents our 1<sup>st</sup> place solution for the Waymo Open Sim Agents Challenge (WOSAC) 2023.
+                        Our proposed <b>M</b>ulti<b>V</b>erse <b>T</b>ransformer for <b>A</b>gent simulation (<b>MVTA</b>) effectively leverages transformer-based motion prediction approaches, and is tailored for closed-loop
+                        simulation of agents. In order to produce simulations with a high degree of realism, we design novel training and sampling methods, and implement a receding horizon prediction mechanism. In addition, we introduce a variable-length history aggregation 
+                        method to mitigate the compounding error that can arise during closed-loop autoregressive execution. On the WOSAC, our <b>MVTA</b> and its enhanced version <b>MVTE</b> reach a realism meta-metric of 0.5091 and 0.5168, respectively, outperforming all the other methods on the <a href="https://waymo.com/open/challenges/2023/sim-agents/" target="_blank">leaderboard</a>.
+                    </p>
+                </div>
+                <div>
+                    <img class="round" style="width:850px" src="./sources/architecture.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-2">Presentation Slides</h2>
+            </div>
+        </div>
+        <div class="columns is-centered">
+        <iframe src="./sources/MultiVerseTransformer-slides.pdf" width="1024px" height="600px"></iframe>
+        </div>
+
+
+    </div>
+</section>
+
+
+<hr>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">MultiVerse Transformer for Sim Agents</h2>
+            </div>
+        </div>
+
+        
+        <div class="content has-text-justified">
+            <p>
+                <b>MultiVerse:</b>
+                Every decision a driver makes, at every fleeting moment, spawns a multitude of parallel universes.
+            </p>
+        </div>
+
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demos-1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          
+        <div class="content has-text-justified">
+            <p>
+                <b>MultiVerse:</b>
+                Our multiverse simulator generates a multitude of parallel universes. Each one mirrors the logged real-world driving data, yet diverges subtly in its own unique way.
+
+            </p>
+        </div>
+
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demos-2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+    </div>
+</section>
+
+
+
+<hr>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Qualitative Results</h2>
+            </div>
+        </div>
+
+        
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="content has-text-justified">
+            <p>
+                <b>Multi-modal behavior.</b>
+                A vehicle waiting to get onto the main road, the car turns left or right, or keeps waiting. ADV
+also demonstrates multi-modal behavior. Video is played at 2x speed.
+            </p>
+        </div>
+
+        
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demo2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="content has-text-justified">
+            <p>
+                <b>Unprotected left turn.</b>
+                Vehicles paused at an intersection, ready to make an unprotected left
+turn, waiting for the oncoming traffic to clear.
+            </p>
+        </div>
+
+
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demo3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="content has-text-justified">
+            <p>
+                <b>Reactive agents.</b>
+                ADV makes a slow right-turn, forcing the agent behind it to slow down or stop.
+            </p>
+        </div>
+
+
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demo4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content has-text-justified">
+            <p>
+                <b>Overtaking maneuver.</b>
+                A congested right lane, blocked by a large truck, and a free-flowing left lane. Trapped cars attempt to
+switch lanes, overtaking the ADV and the remaining slow traffic.
+            </p>
+        </div>
+
+
+        <video width="1920" height="1080" controls>
+            <source src="./sources/demos/demo5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content has-text-justified">
+            <p>
+                <b>Reactive ADV and agents.</b>
+                <i>Left</i>: ADV slows down to allow a car merging onto
+the main road from a driveway. The car behind. <i>Right</i>: In the second simulation, ADV proceeds straight instead of waiting.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<hr>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-2">Paper</h2>
+            </div>
+        </div>
+
+        <br>
+        <div class="columns is-centered">
+            <a href="./sources/MultiVerseTransformer-SimAgents.pdf" target="_blank" rel="noopener noreferrer"><img
+                    class="layered-paper-big" style="height:175px"
+                    src="./sources/paper.png"/></a>
+            <span style="font-size:14pt">Yu Wang, Tiebiao Zhao, Fan Yi<br>
+				<b>Multiverse Transformer: 1st Place Solution for Waymo Open Sim Agents
+                    Challenge 2023</b><br>
+                Technical Report 2023.<br>
+				(<a href="./sources/MultiVerseTransformer-SimAgents.pdf">PDF</a>)<br>
+				</span>
+        </div>
+
+        <br>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website is adapted from source of <a href="https://vobecant.github.io/DriveAndSegment//"
+                                                                 target="_blank" rel="noopener noreferrer">
+                                                                 Drive & Segment</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
